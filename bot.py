@@ -51,7 +51,7 @@ async def on_message(_message):
             'Manggil gue bos? %s Hmm.',
             'Gimana bos %s tengah - tengah? Otw bos, kita gelut >:)',
             'Gimana. Mau mabar bos? %s.',
-            'Gimana sayang :smiling_face_with_3_hearts:.'
+            'Gimana sayang %s :smiling_face_with_3_hearts:.'
         ]
         _id_user  = "<@{}>".format(_message.author.id)
         await _message.channel.send(random.choice(_responses) %_id_user)
