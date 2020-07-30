@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 from discord.ext import commands
 from bs4 import BeautifulSoup as BS
@@ -10,8 +10,7 @@ import discord, random
 # load_dotenv()
 
 _client = commands.Bot(command_prefix='!')
-_token = "NzM4MTYzNDQ0Mzk3ODk5Nzg2.XyH6Rw.zwZc5eejlEk8pCcvgFb4SIk5pO8"
-
+_token = "NzM4MTYzNDQ0Mzk3ODk5Nzg2.XyH6Rw.ScgkDULR7IY4NTqvBF1LRjF4FLo"
 
 @_client.event
 async def on_ready():
