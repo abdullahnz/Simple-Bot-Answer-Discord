@@ -9,6 +9,7 @@ import discord, random
 # load .env 
 # load_dotenv()
 
+Client = discord.Client()
 _client = commands.Bot(command_prefix='!')
 _token = "NzM4MTYzNDQ0Mzk3ODk5Nzg2.XyH6Rw.ScgkDULR7IY4NTqvBF1LRjF4FLo"
 
@@ -114,4 +115,4 @@ async def whatis(ctx, *argv):
     await ctx.channel.send(output)
 
 # runing bot
-_client.run(_token)
+_client.run(_token, bot=True)
