@@ -6,6 +6,9 @@ from dotenv import load_dotenv
 import requests, json, os
 import discord, random
 
+# load .env 
+load_dotenv()
+
 _client = commands.Bot(command_prefix='!')
 _token = os.getenv("DISCORD_TOKEN")
 
