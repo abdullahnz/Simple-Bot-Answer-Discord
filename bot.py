@@ -2,16 +2,12 @@
 
 from discord.ext import commands
 from bs4 import BeautifulSoup as BS
-from dotenv import load_dotenv
-import requests, json, os
-import discord, random
+import requests, json, random
+import discord
 
-# load .env 
-load_dotenv()
-
-Client = discord.Client()
 _client = commands.Bot(command_prefix='!')
-_token = os.getenv('DISCORD_TOKEN')
+_token = "NzM4MTYzNDQ0Mzk3ODk5Nzg2.XyH6Rw.fg0k1If4D19koOJaQq-BgbF_i4g"
+
 
 @_client.event
 async def on_ready():
@@ -28,7 +24,8 @@ async def on_message(_message):
         "Hmm. Gimana gan %s.",
         "Iya. Halo juga bos %s.",
         "Haloo. Jangan lupa makan ya boss :) %s.",
-        "Iya. Yellow yang comel disini. Ada yang bisa dibantu? (%s)"
+        "Iya. Yellow yang comel disini. Ada yang bisa dibantu? (%s)",
+        "Yellow lucu kan bos %s hehe :)"
     ]
 
     # convert message from client to lowercase
@@ -45,16 +42,17 @@ async def on_message(_message):
         _response = "Gayamu %s hamm hemm hamm hemm. Prok dewe ning kene pie! Hmm, canda bang :)" %_id_user
         await _message.channel.send(_response)
     
-    if 'bot' in client_msg:
+    if 'bot' in client_msg or 'yellow' in client_msg:
         _responses = [
             'Manggil gue bos? %s Hmm.',
             'Gimana bos %s tengah - tengah? Otw bos, kita gelut >:)',
             'Gimana. Mau mabar bos? %s.',
+            'Gimana sayang :smiling_face_with_3_hearts:.'
         ]
         _id_user  = "<@{}>".format(_message.author.id)
         await _message.channel.send(random.choice(_responses) %_id_user)
 
-    if 'mabar' in client_msg:
+    if 'mabar' in client_msg or client_msg.startswith('ayo'):
         _responses = [
             'Gk mau. Kau cupu %s, gk maen aku sama orang cupu :)',
             'G LO COPO !!! %s.',
@@ -72,7 +70,6 @@ def search_url(json_data):
         if data[0].startswith('http'):
             return data[0]
             break
-
 
 def hmm(text):
     result = ''
@@ -115,4 +112,4 @@ async def whatis(ctx, *argv):
     await ctx.channel.send(output)
 
 # runing bot
-_client.login(_token)
+_client.run(_token)
