@@ -115,4 +115,4 @@ async def whatis(ctx, *argv):
     await ctx.channel.send(output)
 
 # runing bot
-_client.run(_token, bot=True)
+_client.login(_token)
