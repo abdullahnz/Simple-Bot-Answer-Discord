@@ -7,11 +7,11 @@ import requests, json, os
 import discord, random
 
 # load .env 
-# load_dotenv()
+load_dotenv()
 
 Client = discord.Client()
 _client = commands.Bot(command_prefix='!')
-_token = "NzM4MTYzNDQ0Mzk3ODk5Nzg2.XyH6Rw.ScgkDULR7IY4NTqvBF1LRjF4FLo"
+_token = os.getenv('DISCORD_TOKEN')
 
 @_client.event
 async def on_ready():
