@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
-import discord, random
 from discord.ext import commands
 from bs4 import BeautifulSoup as BS
+from dotenv import load_dotenv
 import requests, json
+import discord, random
 
 _client = commands.Bot(command_prefix='!')
-_token = "NzM4MTYzNDQ0Mzk3ODk5Nzg2.XyH6Rw.kf6p2hS_Cgsvih5jPTiajJQUuCU"
+_token = load_dotenv("DISCORD_TOKEN")
 
 
 @_client.event
