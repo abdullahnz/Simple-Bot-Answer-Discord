@@ -101,10 +101,10 @@ async def whatis(ctx, *argv):
 
     # output for client
     output = '\n'.join([
-        '%s' %hmm(title),
-        '',
-        '%s' %p.text,
-        'Continue reading: %s' %url,
+        '>>> %s' %hmm(title),
+        '>>> ',
+        '>>> %s' %p.text,
+        '>>> Continue reading: %s' %url,
     ])
 
     # send output to client
