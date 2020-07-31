@@ -24,18 +24,18 @@ async def on_message(_message):
     if _message.author == _client.user:
         return
 
-    _hello = [
-        "Hmm. Gimana gan %s.",
-        "Iya. Halo juga bos %s.",
-        "Haloo. Jangan lupa makan ya boss :) %s.",
-        "Iya. Yellow yang comel disini. Ada yang bisa dibantu? (%s)",
-        "Yellow lucu kan bos %s hehe :)"
-    ]
-
     # convert message from client to lowercase
     client_msg = _message.content.lower()
 
     if client_msg.startswith('halo'):
+        _hello = [
+            "Hmm. Gimana gan %s.",
+            "Iya. Halo juga bos %s.",
+            "Haloo. Jangan lupa makan ya boss :) %s.",
+            "Iya. Yellow yang comel disini. Ada yang bisa dibantu? (%s)",
+            "Yellow lucu kan bos %s hehe :)"
+        ]
+
         _id_user = "<@{}>".format(_message.author.id)
         _response = random.choice(_hello) % _id_user
         await _message.channel.send(_response)
